@@ -19,6 +19,8 @@ import { NotfoundComponent } from './pages/notfound/notfound/notfound.component'
 import { SearchComponent } from './shared/navbar/search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieDetailsComponent } from './pages/movieDetails/movie-details/movie-details.component';
+import { MovieapiService } from './service/movieapi.service';
+import {HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { MovieDetailsComponent } from './pages/movieDetails/movie-details/movie-
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     AntdesignModule,
     NzBreadCrumbModule,
     MaterialdesignModule,
@@ -45,7 +48,8 @@ import { MovieDetailsComponent } from './pages/movieDetails/movie-details/movie-
     MatListModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    MovieapiService
   ],
   bootstrap: [AppComponent]
 })
