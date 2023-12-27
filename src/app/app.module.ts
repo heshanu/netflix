@@ -18,6 +18,7 @@ import { HomeComponent } from './pages/home/home/home.component';
 import { NotfoundComponent } from './pages/notfound/notfound/notfound.component';
 import { SearchComponent } from './shared/navbar/search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieDetailsComponent } from './pages/movieDetails/movie-details/movie-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     NotfoundComponent,
     SearchComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
