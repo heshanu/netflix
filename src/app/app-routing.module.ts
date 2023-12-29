@@ -7,9 +7,8 @@ import { SearchComponent } from './pages/search/search/search.component';
 import { HomeComponent } from './pages/home/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: HomeComponent },
   { path: 'search', component: SearchComponent },
-  {path:'home',component:HomeComponent},
   { path: 'movieDetails/:id', component:MovieDetailsComponent},
   {path:'**',component:NotfoundComponent}
 ];
