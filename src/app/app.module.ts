@@ -23,6 +23,7 @@ import {HttpClientModule } from '@angular/common/http';
 import { CarouslComponent } from './shared/carousl/carousl.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     NotfoundComponent,
     MovieDetailsComponent,
-    CarouslComponent,   
+    CarouslComponent,
+    SpinnerComponent,   
   ],
   imports: [
     BrowserModule,
