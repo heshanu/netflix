@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MovieapiService } from '../../../service/movieapi.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
@@ -8,30 +8,46 @@ import { CommonModule } from '@angular/common';
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
-  imports: [CommonModule],
+  imports: [CommonModule,ReactiveFormsModule],
   standalone: true
 })
 export class SearchComponent {
- constructor(private service:MovieapiService,private title:Title,private meta:Meta) {
+ movieName!:any;
+ constructor(private service:MovieapiService,private title:Title,private meta:Meta,private fb: FormBuilder) {
     this.title.setTitle('Search movies - showtime');
     this.meta.updateTag({name:'description',content:'search here movies like avatar,war etc'});
    }
 
-  ngOnInit(): void {
-  }
+  searchResult: any;
 
-  searchResult:any;
-  searchForm = new FormGroup({
-    'movieName':new FormControl(null)
+  selectedFilm: any[] = [];
+  selectedM: any;
+  
+  searchForm = this.fb.group({
+    movieName: new FormControl()
   });
 
-  submitForm()
+  public submitForm():void
   {
-    alert('searching...');
-      console.log(this.searchForm.value,'searchform#');
-      this.service.getSearchMovie(this.searchForm.value).subscribe((result:any)=>{
-          console.log(result,'searchmovie##');
-          this.searchResult = result.results;
-      });
+    if (this.searchForm.valid) {
+      
+    // console.log('this is valid form');
+     this.movieName = this.searchForm.value.movieName;
+      //alert(this.movieName);
+      this.getSearchMovie(); 
+    }
+    else{
+      alert('please enter movie name');
+    }
+    this.searchForm.reset();
   }
+
+  public getSearchMovie():void {
+    const searchR = this.service.getSearchMovie(this.movieName).subscribe((res: any) => {
+      this.searchResult = res.results;
+      console.log(this.searchResult);
+    });
+    
+  };
+  
 }
