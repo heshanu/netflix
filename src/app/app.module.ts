@@ -23,6 +23,8 @@ import { MovieapiService } from './service/movieapi.service';
 import {HttpClientModule } from '@angular/common/http';
 import { CarouslComponent } from './shared/carousl/carousl.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +34,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NotfoundComponent,
     SearchComponent,
     MovieDetailsComponent,
-    CarouslComponent,
+    CarouslComponent,   
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
