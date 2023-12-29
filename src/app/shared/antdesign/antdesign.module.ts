@@ -4,6 +4,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 @NgModule({
   declarations: [],
   imports: [
@@ -12,7 +14,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
   ],
   exports: [
     NzLayoutModule, NzCarouselModule, NzCardModule,
-    NzListModule
+    NzListModule,NzGridModule,NzAvatarModule
   ]
 })
 export class AntdesignModule { }

@@ -1,16 +1,17 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MovieapiService } from '../../../service/movieapi.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {NzGridModule} from 'ng-zorro-antd/grid';
 
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrl: './movie-details.component.css'
+  styleUrl: './movie-details.component.css',
 })
 export class MovieDetailsComponent implements OnInit{
-  selectedMovieList!: any;
-  selectedMovieVideo!: any;  
-  selectedMovieCast!: any;
+  selectedMovie: any;
+  selectedMovieVideo!: any;
+  selectedMovieCast:any[]=[];
 
   constructor(private movieApi: MovieapiService,private router:ActivatedRoute) {}
   ngOnInit(): void {
@@ -22,7 +23,7 @@ export class MovieDetailsComponent implements OnInit{
   
   public getMovieList(id: any) { 
     this.movieApi.getMovieDetails(id).subscribe((data: any) => {
-      this.selectedMovieList = data;
+      this.selectedMovie = data;
       // this.selectedMovieList = data[0];
       //  console.log(this.selectedMovieList); 
     });
@@ -44,7 +45,8 @@ export class MovieDetailsComponent implements OnInit{
 
   public getMovieCast(id: any) { 
     this.movieApi.getMovieCast(id).subscribe((data: any) => {
-      this.selectedMovieCast = data;
+      
+      this.selectedMovieCast = data.cast.slice(0,5);      
       // this.selectedMovieList = data[0];
       //  console.log(this.selectedMovieList); 
     });
