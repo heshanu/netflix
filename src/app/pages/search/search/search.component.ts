@@ -3,17 +3,18 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angul
 import { MovieapiService } from '../../../service/movieapi.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-
+import { Router } from '@angular/router';
+import { NzListModule } from 'ng-zorro-antd/list';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule ],
   standalone: true
 })
 export class SearchComponent {
  movieName!:any;
- constructor(private service:MovieapiService,private title:Title,private meta:Meta,private fb: FormBuilder) {
+ constructor(private service:MovieapiService,private title:Title,private meta:Meta,private fb: FormBuilder,private router:Router) {
     this.title.setTitle('Search movies - showtime');
     this.meta.updateTag({name:'description',content:'search here movies like avatar,war etc'});
    }
@@ -50,4 +51,8 @@ export class SearchComponent {
     
   };
   
+  public showMovieDetails(id: any) { 
+   // alert(id);
+    this.router.navigate(['/movieDetails',this.searchResult[0].id]);
+  }
 }
