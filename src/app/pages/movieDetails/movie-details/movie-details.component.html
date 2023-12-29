@@ -1,5 +1,5 @@
 <!-- {{selectedMovieList|json}} -->
-<mat-card class="example-card">
+<mat-card class="example-card" *ngIf="selectedMovie?.backdrop_path">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image" style="background-image:url('https://image.tmdb.org/t/p/original/selectedMovie?.backdrop_path');"></div>
         <mat-card-title>{{selectedMovie?.original_title}}</mat-card-title>
