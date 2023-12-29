@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import{NzCardModule} from 'ng-zorro-antd/card';
+import {MatCardModule} from '@angular/material/card'; 
 @NgModule({
   declarations: [],
   imports: [
@@ -11,7 +11,7 @@ import{NzCardModule} from 'ng-zorro-antd/card';
   exports:[
     MatFormFieldModule,
     MatInputModule,
-    NzCardModule
+    MatCardModule
 
   
   ]

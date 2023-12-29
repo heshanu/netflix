@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
-
+import { NzCardModule } from 'ng-zorro-antd/card';
 @NgModule({
   declarations: [],
   imports: [
@@ -10,7 +10,7 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
     NzLayoutModule
   ],
   exports: [
-    NzLayoutModule,NzCarouselModule 
+    NzLayoutModule,NzCarouselModule,NzCardModule 
   ]
 })
 export class AntdesignModule { }

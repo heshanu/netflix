@@ -1,21 +1,17 @@
-<!-- <p>movie-details works!</p>
-<div *ngFor="let f of movieList">
-    <p>{{f.title}}</p>
-    <p>{{f.overview}}</p>
-    <p>{{f.release_date}}</p>
-    <p>{{f.vote_average}}</p>
-    <p>{{f.vote_count}}</p>
-    <p>{{f.poster_path}}</p>
-    <p>{{f.backdrop_path}}</p>
-    <p>{{f.original_language}}</p>
-    <p>{{f.original_title}}</p>
-    <p>{{f.popularity}}</p>
-    <p>{{f.video}}</p>
-    <p>{{f.adult}}</p>
-    <p>{{f.id}}</p>
-    <p>{{f.genre_ids}}</p>
-    <button>dfddfddfd</button>
-</div>
-<hr/> -->
-<!-- {{movieList|json}} -->
+<!-- {{selectedMovieList|json}} -->
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{selectedMovieList.original_title}}</mat-card-title>
+        <mat-card-subtitle>imdb Id;{{selectedMovieList.imdb_id}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://image.tmdb.org/t/p/original/{{selectedMovieList.backdrop_path}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>{{selectedMovieList.overview}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>
 
