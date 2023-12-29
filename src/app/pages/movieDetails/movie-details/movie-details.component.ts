@@ -17,6 +17,7 @@ export class MovieDetailsComponent{
   public getMovieList() { 
     this.movieApi.getBannerApiData().subscribe((data: any) => {
       this.movieList = data.results;
+      //console.log(this.movieList[0].id);
       //localStorage.setItem('movieList', JSON.stringify(this.movieList));
     });
   }
