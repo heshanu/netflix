@@ -21,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieDetailsComponent } from './pages/movieDetails/movie-details/movie-details.component';
 import { MovieapiService } from './service/movieapi.service';
 import {HttpClientModule } from '@angular/common/http';
+import { CarouslComponent } from './shared/carousl/carousl.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import {HttpClientModule } from '@angular/common/http';
     NotfoundComponent,
     SearchComponent,
     MovieDetailsComponent,
+    CarouslComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import {HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    NgbModule
   ],
   providers: [
     provideClientHydration(),
