@@ -27,6 +27,7 @@ export class SearchComponent {
 
   submitForm()
   {
+    alert('searching...');
       console.log(this.searchForm.value,'searchform#');
       this.service.getSearchMovie(this.searchForm.value).subscribe((result:any)=>{
           console.log(result,'searchmovie##');

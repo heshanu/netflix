@@ -16,7 +16,6 @@ import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './comp/login/login.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { NotfoundComponent } from './pages/notfound/notfound/notfound.component';
-import { SearchComponent } from './shared/navbar/search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieDetailsComponent } from './pages/movieDetails/movie-details/movie-details.component';
 import { MovieapiService } from './service/movieapi.service';
@@ -32,7 +31,6 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     HomeComponent,
     NotfoundComponent,
-    SearchComponent,
     MovieDetailsComponent,
     CarouslComponent,   
   ],
