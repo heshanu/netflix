@@ -20,6 +20,7 @@ export class CarouslComponent implements OnInit{
     this.thrillerMovie();
   }
 
+  isLoading:boolean=false;
   movieList: any | null[] = [];
   bannerResult: any = [];
   trendingMovieResult: any = [];
@@ -35,25 +36,31 @@ export class CarouslComponent implements OnInit{
   
 
   bannerData() {
+    this.isLoading=true;
     this.service.bannerApiData().subscribe((result) => {
       console.log(result, 'bannerresult#');
       this.bannerResult = result.results;
     });
+    this.isLoading=false;
   }
 
   trendingData() {
+    this.isLoading=true;
     this.service.trendingMovieApiData().subscribe((result) => {
       console.log(result, 'trendingresult#');
       this.trendingMovieResult = result.results;
       // this.trendingMovieResult
     });
+    this.isLoading=false;
   }
 
   // action 
   actionMovie() {
+       this.isLoading=true;
     this.service.fetchActionMovies().subscribe((result) => {
       this.actionMovieResult = result.results;
     });
+       this.isLoading=false;
   }
 
 
