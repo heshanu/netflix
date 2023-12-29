@@ -2,12 +2,12 @@
 <mat-card class="example-card">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{selectedMovieList.original_title}}</mat-card-title>
-        <mat-card-subtitle>imdb Id;{{selectedMovieList.imdb_id}}</mat-card-subtitle>
+        <mat-card-title>{{selectedMovie?.original_title}}</mat-card-title>
+        <mat-card-subtitle>imdb Id;{{selectedMovie?.imdb_id}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://image.tmdb.org/t/p/original/{{selectedMovieList.backdrop_path}}" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="https://image.tmdb.org/t/p/original/{{selectedMovie?.backdrop_path}}" alt="Photo of a Shiba Inu">
     <mat-card-content>
-        <p>{{selectedMovieList.overview}}</p>
+        <p>{{selectedMovie?.overview}}</p>
     </mat-card-content>
     <mat-card-actions>
         <button mat-button>LIKE</button>
@@ -15,3 +15,22 @@
     </mat-card-actions>
 </mat-card>
 
+<!-- {{selectedMovieCast|json}} -->
+<div class="contain mt-3 mb-5 p-4">
+
+    <!-- trending movies  -->
+    <div class="row">
+        <h5 class="text-white">Details</h5>
+        <div class="rowposter mt-3 p-2">
+            <ng-container *ngFor="let smc of selectedMovieCast">
+                <img src="https://image.tmdb.org/t/p/original/{{smc.profile_path}}" class="rowimg largeposter" alt="..."
+                    [routerLink]="['/movieDetails',smc.id]">
+                <div class="rowtitle">{{smc.name}}</div>
+                {{smc.original_name}}
+                {{smc.character}}
+            </ng-container>
+
+        </div>
+
+    </div>
+</div>
